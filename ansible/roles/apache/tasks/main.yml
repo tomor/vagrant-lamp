@@ -1,0 +1,6 @@
+---
+- name: Install Apache
+  dnf: pkg=httpd state=installed
+
+- name: Start and enable Apache
+  action: service name=httpd state=started enabled=yes

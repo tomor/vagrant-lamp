@@ -1,0 +1,8 @@
+---
+- hosts: vagrant
+  sudo: true
+  gather_facts: false # Fedora23 doesn't have python2 installed by default
+  roles:
+    - python2
+    - facts   # gather facts manualy after python2 is properly installed
+    - apache
