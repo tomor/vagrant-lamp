@@ -1,5 +1,5 @@
 # Vagrant LAMP
-[this project in development - not ready to use]
+**! this project in development - not ready to use !**
 
 This project was created basically for myself to be able to quickly prepare web development
 environment, but feel free to use it or fork it and change according to your needs.
