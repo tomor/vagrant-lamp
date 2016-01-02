@@ -22,6 +22,12 @@ Vagrant.configure(2) do |config|
   # config.vm.synced_folder "../data", "/vagrant_data"
   config.vm.synced_folder "./", "/vagrant", :nfs => { :mount_options => ["dmode=777","fmode=777"] }
 
+  # vagrant-vbguest plugin configuration - https://github.com/dotless-de/vagrant-vbguest/
+  # do NOT download the iso file from a webserver
+  #config.vbguest.no_remote = true # for this to be true you need the iso package installed
+  # check additions version when booting this machine
+  #config.vbguest.auto_update = false
+
   # allow to use my ssh key from vagrant guest
   #config.ssh.forward_agent = 'true'
 
