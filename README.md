@@ -39,3 +39,9 @@ environment, but feel free to use it or fork it and change according to your nee
 - setup apache
  - allow virtualhosts in the config/apache/virtualhosts
 - test a php project
+- create tool for quick virtualhost creation
+- install adminer (create default virtualhost for it)
+- domains for the box - idea:
+   - mysql.vg - access adminner(mysql)
+   - project01.vg  - access some project
+   - general idea: machine is connected with 1st lvl domain (this one will be \*.vg)
