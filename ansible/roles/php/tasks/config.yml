@@ -15,3 +15,4 @@
     - { regexp: 'memory_limit =',           line: 'memory_limit = 1024M' }
     - { regexp: 'error_log =',              line: 'error_log = /var/log/php_errors.log' }
     - { regexp: 'upload_max_filesize =',    line: 'upload_max_filesize = 50M' }
+  notify: Restart apache
