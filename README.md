@@ -16,11 +16,10 @@ environment, but feel free to use it or fork it and change according to your nee
 
 
 ## Basic facts
-* you will get: Apache/2.4.17 (Fedora), mysql, php 5.6
-* tested on host: Fedora23, Vagrant 1.8.1, VirtualBox 5.0.10, ansible 1.9.4
-* you are expected to create multiple virtualhosts
-* vagrant base box: fedora/23-cloud-base
-* vagrant provisioned by Ansible
+* you will get: *apache/2.4.17, mysql, php 5.6*
+* tested on (host): *Fedora23, Vagrant 1.8.1, VirtualBox 5.0.10, ansible 1.9.4*
+* vagrant base box: *fedora/23-cloud-base*
+* vagrant provisioned by: *Ansible*
 
 
 ## Anatomy of the development environment
@@ -31,9 +30,15 @@ environment, but feel free to use it or fork it and change according to your nee
   config   # directory with configurations (e.g. apache virtualhosts)
   projects # all web project source codes are meant to be stored here in subdirectories
   tools    # scripts (mostly bash) which should help with some dev tasks
+```
+
+## Features
+* prepared for multiple virtualhosts
+ - configuration is in shared directory so you can easily create new one from host
+* mysql [web administration](https://www.adminer.org/en/ "Adminer") included, running on `http://mysql.vg`
 
 ## Configuraton of host machine
-* to be able to use adminer (mysql web admin) add this line to your `hosts` file
+* to be able to use adminer (mysql web administration) add this line to your `hosts` file
 ```bash
 192.168.25.25 mysql.vg
 ```
