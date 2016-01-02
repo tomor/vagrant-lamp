@@ -20,7 +20,10 @@ Vagrant.configure(2) do |config|
 
   # Shared folder to the guest VM. The first argument is the path on the host
   # config.vm.synced_folder "../data", "/vagrant_data"
-  config.vm.synced_folder "./", "/vagrant", type: "nfs"
+  config.vm.synced_folder "./", "/vagrant", :nfs => { :mount_options => ["dmode=777","fmode=777"] }
+
+  # allow to use my ssh key from vagrant guest
+  #config.ssh.forward_agent = 'true'
 
   # VirtualBox provider specific configuration:
   config.vm.provider "virtualbox" do |vb|

@@ -1,0 +1,16 @@
+---
+# for variables see vars/all.yml
+- name: Set default server name to get rid of warning when restarting httpd service
+  lineinfile: dest={{ apache.confpath }} regexp='^ServerName ' insertafter="^#ServerName " line='ServerName localhost:80'
+
+- name: Include virtualhosts settings from vagrant synced folder
+  lineinfile:
+    dest: "{{ apache.confpath }}"
+    state: present
+    line: "{{ item }}"
+  with_items:
+    - IncludeOptional /vagrant/conf/vhosts_default/*.conf
+    - IncludeOptional /vagrant/conf/vhosts_projects/*.conf
+
+- name: Start and enable Apache
+  action: service name=httpd state=started enabled=yes

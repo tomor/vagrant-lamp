@@ -1,0 +1,17 @@
+---
+# for variables see vars/all.yml
+- name: Configure php
+  lineinfile:
+    dest: "{{ php.inipath }}"
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+  with_items:
+    - { regexp: 'date.timezone =',          line: 'date.timezone = Europe/Prague' }
+    - { regexp: 'display_errors =',         line: 'display_errors = On' }
+    - { regexp: 'display_startup_errors =', line: 'display_startup_errors = On' }
+    - { regexp: 'register_globals =',       line: 'register_globals = Off' }
+    - { regexp: 'error_reporting =',        line: 'error_reporting = E_ALL' }
+    - { regexp: 'max_execution_time =',     line: 'max_execution_time = 60' }
+    - { regexp: 'memory_limit =',           line: 'memory_limit = 1024M' }
+    - { regexp: 'error_log =',              line: 'error_log = /var/log/php_errors.log' }
+    - { regexp: 'upload_max_filesize =',    line: 'upload_max_filesize = 50M' }

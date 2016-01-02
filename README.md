@@ -12,10 +12,11 @@ environment, but feel free to use it or fork it and change according to your nee
 ```bash
 > vagrant plugin install vagrant-vbguest
 ```
+* Install NFS server on your host (do not forget to allow it in firewall)
 
 
 ## Basic facts
-* you will get: apache, mysql, php 5.6
+* you will get: Apache/2.4.17 (Fedora), mysql, php 5.6
 * tested on host: Fedora23, Vagrant 1.8.1, VirtualBox 5.0.10, ansible 1.9.4
 * you are expected to create multiple virtualhosts
 * vagrant base box: fedora/23-cloud-base
@@ -30,8 +31,12 @@ environment, but feel free to use it or fork it and change according to your nee
   config   # directory with configurations (e.g. apache virtualhosts)
   projects # all web project source codes are meant to be stored here in subdirectories
   tools    # scripts (mostly bash) which should help with some dev tasks
-```  
 
+## Configuraton of host machine
+* to be able to use adminer (mysql web admin) add this line to your `hosts` file
+```bash
+192.168.25.25 mysql.vg
+```
 
 # TODOs
 - install php
@@ -45,3 +50,18 @@ environment, but feel free to use it or fork it and change according to your nee
    - mysql.vg - access adminner(mysql)
    - project01.vg  - access some project
    - general idea: machine is connected with 1st lvl domain (this one will be \*.vg)
+- install composer
+- install npm
+- install mail catcher - see https://box.scotch.io/  
+
+## Similar projects
+* https://github.com/geerlingguy/ansible-vagrant-examples/tree/master/lamp
+* https://box.scotch.io/  
+* https://github.com/pesterhazy/vagrant-lamp-ansible
+
+## Another good sources
+* https://github.com/geerlingguy?tab=repositories
+* https://github.com/ansible/ansible-examples/tree/master/lamp_simple
+* https://github.com/dustymabe/vagrantdirs
+* https://github.com/ansible/ansible-examples/tree/master/lamp_simple_rhel7
+* http://phansible.com/#section-webservers

@@ -1,0 +1,11 @@
+---
+- name: Install handy tools.
+  dnf:
+    name: "{{ item }}"
+    state: installed
+  with_items:
+    - vim
+    - vim-X11
+    - wget
+    - curl
+    - git

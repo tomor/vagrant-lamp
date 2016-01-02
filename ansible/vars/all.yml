@@ -1,0 +1,8 @@
+---
+guest:
+  basedir: /vagrant
+  hostname: fedora23-vagrant.vg
+php:
+  inipath: /etc/php.ini
+apache:
+  confpath: /etc/httpd/conf/httpd.conf

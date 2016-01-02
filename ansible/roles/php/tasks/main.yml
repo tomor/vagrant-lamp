@@ -1,0 +1,38 @@
+---
+# Install php modules
+- name: Install PHP packages.
+  dnf:
+    name: "{{ item }}"
+    state: installed
+    enablerepo: "remi,remi-php56,epel"
+  with_items:
+    - php
+    - php-cli
+    - php-common
+    - php-devel
+    - php-gd
+    - php-imap
+    - php-intl
+    - php-ldap
+    - php-mbstring
+    - php-mcrypt
+    - php-opcache
+    - php-pdo
+    - php-pear
+    - php-pecl-apc
+    - php-soap
+    - php-xml
+    - php-xmlrpc
+  notify: Restart apache
+
+# Configure PHP
+- name: Ensure configuration directories exist.
+  file:
+    path: "{{ item }}"
+    state: directory
+    follow: true
+  with_items:
+    - /etc
+    - /etc/php.d
+
+- include: config.yml
