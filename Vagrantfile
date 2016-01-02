@@ -33,7 +33,7 @@ Vagrant.configure(2) do |config|
 
   # Run Ansible from the Vagrant Host - provisioning
   config.vm.provision "ansible" do |ansible|
-    ansible.verbose = "v"
+    # ansible.verbose = "v"
     ansible.playbook = "ansible/playbook.yml"
     ansible.inventory_path = "ansible/inventories/vagrant"
     ansible.limit = "vagrant"
