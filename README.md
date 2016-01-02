@@ -19,12 +19,11 @@ environment, but feel free to use it or fork it and change according to your nee
 * you will get: *apache/2.4.17, mysql, php 5.6*
 * tested on (host): *Fedora23, Vagrant 1.8.1, VirtualBox 5.0.10, ansible 1.9.4*
 * vagrant base box: *fedora/23-cloud-base*
-* vagrant provisioned by: *Ansible*
 
 
 ## Anatomy of the development environment
 - actual `.` vagrant directory on the host is shared with the guest `/vagrant` directory via NFS
-- there are several directories, each with own purpose
+- there are several subdirectories, each with own purpose
 ```bash
   ansible  # provisioning for the vagrant box
   config   # directory with configurations (e.g. apache virtualhosts)
@@ -44,17 +43,12 @@ environment, but feel free to use it or fork it and change according to your nee
 ```
 
 # TODOs
-- install php
 - install mysql
-- setup apache
- - allow virtualhosts in the config/apache/virtualhosts
 - test a php project
 - create tool for quick virtualhost creation
-- install adminer (create default virtualhost for it)
 - domains for the box - idea:
    - mysql.vg - access adminner(mysql)
    - project01.vg  - access some project
-   - general idea: machine is connected with 1st lvl domain (this one will be \*.vg)
 - install composer
 - install npm
 - install mail catcher - see https://box.scotch.io/  
