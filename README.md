@@ -8,7 +8,7 @@ environment, but feel free to use it or fork it and change according to your nee
 * Install [Vagrant](https://docs.vagrantup.com/v2/installation/index.html "Vagrant docs - Istallation")
 * Install [VirtualBox](https://www.virtualbox.org/)
 * Install [Ansible](http://docs.ansible.com/intro_installation.html)
-* Install Vagrant plugin for VirtualBox guest additions
+* Install Vagrant [plugin for VirtualBox guest additions](https://github.com/dotless-de/vagrant-vbguest/)
 ```bash
 > vagrant plugin install vagrant-vbguest
 ```
@@ -52,6 +52,8 @@ environment, but feel free to use it or fork it and change according to your nee
 - install composer
 - install npm
 - install mail catcher - see https://box.scotch.io/  
+- think about using ansible_local (having ansible on the guest and starting it there)
+  - might be advantage because you wouldn't have to install ansible on the host
 
 ## Similar projects
 * https://github.com/geerlingguy/ansible-vagrant-examples/tree/master/lamp

@@ -1,5 +1,5 @@
 ---
-- name: Install handy tools.
+- name: Install handy packages
   dnf:
     name: "{{ item }}"
     state: installed
