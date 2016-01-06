@@ -42,6 +42,9 @@ environment, but feel free to use it or fork it and change according to your nee
 192.168.25.25 mysql.vg
 ```
 
+## Usefull commands (start from vagrant box terminal)
+- sudo apachectl restart
+
 # TODOs
 - install mysql
 - test a php project
