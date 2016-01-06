@@ -5,8 +5,7 @@
     - vars/all.yml
   gather_facts: false # Fedora23 doesn't have python2 installed by default
   roles:
-    - python2
-    - facts   # gather facts manualy after python2 is properly installed
+    - ansible_prepare # prepare remote box for ansible provisioning
     - server
     - handy_soft
     - apache

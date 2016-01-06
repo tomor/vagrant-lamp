@@ -1,0 +1,6 @@
+---
+- name: Install python2 on the remote machine
+  raw: dnf install -y python2 python2-dnf libselinux-python
+
+- name: Gather facts
+  setup:
