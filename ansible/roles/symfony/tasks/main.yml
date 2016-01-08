@@ -1,0 +1,19 @@
+---
+# Install symfony installer
+
+- name: Check if Symfony is installed.
+  stat: "path={{ symfony_path }}"
+  register: symfony_bin
+
+- name: Download Symfony installer.
+  get_url:
+    url: https://symfony.com/installer
+    dest: "{{ symfony_path }}"
+    mode: 0755
+  when: symfony_keep_updated or not symfony_bin.stat.exists
+
+- name: Make symfony bin executable
+  file: 
+    path:  "{{ symfony_path }}"
+    state: file
+    mode:  a+x
