@@ -45,6 +45,10 @@ environment, but feel free to use it or fork it and change according to your nee
 ## Usefull commands (start from vagrant box terminal)
 - sudo apachectl restart
 
+## Notes
+- `symfony new project` is very slow when executed in vagrant box terminal in nfs type sync directory. I think that it's because of NFS filesystem. It's better to use symfony commands (those which changes/creates a lot of files) localy - on the host machine.
+
+
 # TODOs
 - install mysql
 - test a php project
